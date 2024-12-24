@@ -1,0 +1,14 @@
+use stdio;;
+
+fn malloc(size: i64) : *i8 extern ;
+fn calloc(count: i64, size: i64) : *i8 extern ;
+fn realloc(ptr: *i8, size: i64) : *i8 extern ;
+fn free(ptr: *i8): void extern ;
+fn memchr(ptr: *i8, value: i32, num: i64) : *i8 extern ;
+fn memcmp(ptr1: *i8, ptr2: *i8, num: i64) : i32 extern ;
+fn memcpy(dest: *i8, src: *i8, num: i64) : *i8 extern ;
+fn memmove(dest: *i8, src: *i8, num: i64) : *i8 extern ;
+fn memset(ptr: *i8, value: i32, num: i64) : *i8 extern ;
+
+
+

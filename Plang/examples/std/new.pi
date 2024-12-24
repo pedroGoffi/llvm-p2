@@ -1,0 +1,28 @@
+use memory;;
+
+
+struct Pietra_Arena {
+	b_ptr:		*i64
+	b_end:		*i64
+	b_start:	*i64
+	blocks:		**i64
+	size:		i64	
+}
+
+fn useArena(arena: *Pietra_Arena): void {
+	printf("Arena_use\n");
+	printf("arena			- %p\n", arena);
+	printf("arena->b_ptr	- %p\n", arena->b_ptr);
+	*arena->b_ptr = 69420;
+}
+
+fn arena_test(): void { 
+	arena: *Pietra_Arena = malloc(88);
+	arena->b_ptr = malloc(8);
+	useArena(arena);
+
+	printf("---------- after\n");
+	printf("arena			- %p\n", arena);
+	printf("arena->b_ptr	- %p\n", arena->b_ptr);
+	printf("ok - aptr = %d | got ptr = %p\n", *arena->b_ptr, arena->b_ptr);
+}

@@ -1,0 +1,33 @@
+struct FILE{
+    fd: i32  
+    buffer: *char
+    buffer_size: i64
+    buffer_index: i64
+    flags: i32
+    eof: i32
+    error: i32
+} 
+
+fn fopen(filename: *i8, mode: *i8) : *FILE extern ;
+fn fclose(stream: *FILE) : i32 extern ;
+fn remove(filename: *i8) : i32 extern ;
+
+//fn fflush(stream: *FILE) : i32 extern ;
+//fn fread(ptr: *i64, size: i64, count: i64, stream: *FILE) : i64 extern ;
+//fn fwrite(ptr: *i64, size: i64, count: i64, stream: *FILE) : i64 extern ;
+//fn fpri32f(stream: *FILE, format: *i8, ...) : i32 extern ;
+//fn fscanf(stream: *FILE, format: *i8, ...) : i32 extern ;
+//fn fseek(stream: *FILE, offset: i64, whence: i32) : i32 extern ;
+//fn ftell(stream: *FILE) : i64 extern ;
+//fn rewind(stream: *FILE) extern ;
+//fn feof(stream: *FILE) : i32 extern ;
+//fn ferror(stream: *FILE) : i32 extern ;
+//fn clearerr(stream: *FILE) extern ;
+//fn getline(lineptr: **i8, n: *i64, stream: *FILE) : i64 extern ;
+//fn fgetc(stream: *FILE) : i32 extern ;
+//fn fgets(buf: *i8, n: i32, stream: *FILE) : *i8 extern ;
+//fn fputc(c: i32, stream: *FILE) : i32 extern ;
+//fn fputs(str: *i8, stream: *FILE) : i32 extern ;
+//fn ungetc(c: i32, stream: *FILE) : i32 extern ;
+//fn freopen(filename: *i8, mode: *i8, stream: *FILE) : *FILE extern ;
+

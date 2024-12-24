@@ -1,0 +1,33 @@
+struct sockaddr {
+    sa_family: i16 // Address family (e.g., AF_INET, AF_INET6)
+    // little hack
+    sa_data_1: i64
+    sa_data_2: i32
+    sa_data_3: i16    
+}
+
+struct sockaddr_in {
+    sin_family: i16     // Address family (AF_INET)
+    sin_port: i16 // Port number (network byte order)
+    sin_addr: i32  // i32ernet address (struct in_addr)
+    sin_zero: i64
+    // little hack sin_zero[8]; // Padding to make structure the same size as sockaddr
+}
+
+// Definition of struct in_addr
+struct in_addr {
+    s_addr: i32 // IP address (network byte order)
+}
+
+fn socket(domain: i32, type: i32, protocol: i32) : i32 extern ;
+fn bind(sockfd: i32, addr: *sockaddr, addrlen: i64) : i32 extern ;
+fn listen(sockfd: i32, backlog: i32) : i32 extern ;
+fn accept(sockfd: i32, addr: *sockaddr, addrlen: *i64) : i32 extern ;
+fn connect(sockfd: i32, addr: *sockaddr, addrlen: i64) : i32 extern ;
+fn recv(sockfd: i32, buf: *i8, len: i64, flags: i32) : i64 extern ;
+fn send(sockfd: i32, buf: *i8, len: i64, flags: i32) : i64 extern ;
+fn close(sockfd: i32) : i32 extern ;
+fn getsockname(sockfd: i32, addr: *sockaddr, addrlen: *i64) : i32 extern ;
+fn getpeername(sockfd: i32, addr: *sockaddr, addrlen: *i64) : i32 extern ;
+fn setsockopt(sockfd: i32, level: i32, optname: i32, optval: *i32, optlen: i64) : i32 extern ;
+fn getsockopt(sockfd: i32, level: i32, optname: i32, optval: *i32, optlen: *i64) : i32 extern ;

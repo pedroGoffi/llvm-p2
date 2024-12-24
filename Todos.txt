@@ -1,0 +1,15 @@
+TODO:
+	Arena allocation
+	|-> new expressions
+
+	Struct methods
+	|-> vector
+
+	Templating
+	|-> generic vector
+
+	std allocator
+	|-> rewrite it in itself
+
+
+Se acessare un field de una estrutura que seja um ponteiro, derreferenciar automaticamente tche
